@@ -20,14 +20,14 @@ Binary Search is very fast (O(log n)). It works only on sorted arrays because it
 
 Overall, the results match the expected Big-O complexity.
 
-![main](Screenshots/main)
+![main](Screenshots/main.png)
 
-![sorter_1](Screenshots/sorter_1)
+![sorter_1](Screenshots/sorter_1.png)
 
-![sorter_2](Screenshots/sorter_2)
+![sorter_2](Screenshots/sorter_2.png)
 
-![searcher](Screenshots/searcher)
+![searcher](Screenshots/searcher.png)
 
-![experiment_1](Screenshots/experiment_1)
+![experiment_1](Screenshots/experiment_1.png)
 
-![experiment_2](Screenshots/experiment_2)
+![experiment_2](Screenshots/experiment_2.png)
