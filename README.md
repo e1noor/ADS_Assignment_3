@@ -8,7 +8,7 @@ I tested them on random and sorted arrays of sizes 10, 100, and 1000. I measured
 
 Here is my output:
 
-![output](output.png)
+![output](Screenshots/output.png)
 
 
 
@@ -20,14 +20,14 @@ Binary Search is very fast (O(log n)). It works only on sorted arrays because it
 
 Overall, the results match the expected Big-O complexity.
 
-![main](<img width="1920" height="1080" alt="main" src="https://github.com/user-attachments/assets/09a82640-6220-4a73-9435-b5ca210456ee" />)
+![main](Screenshots/main)
 
-![sorter_1](<img width="1920" height="1080" alt="sorter_2" src="https://github.com/user-attachments/assets/df69c6a0-49c6-4ea8-8fcd-4f8f109c45be" />)
+![sorter_1](Screenshots/sorter_1)
 
-![sorter_2](<img width="1920" height="1080" alt="sorter_1" src="https://github.com/user-attachments/assets/f03abcac-28ca-474c-9cb6-b48ca667da3a" />)
+![sorter_2](Screenshots/sorter_2)
 
-![searcher](<img width="1920" height="1080" alt="experiment_1" src="https://github.com/user-attachments/assets/24ec615e-74ad-4748-8587-92a12a58e946" />)
+![searcher](Screenshots/searcher)
 
-![experiment_1](<img width="1920" height="1080" alt="searcher" src="https://github.com/user-attachments/assets/0a7eee6c-cdf3-4464-b38a-3a1d31b71673" />)
+![experiment_1](Screenshots/experiment_1)
 
-![experiment_2](<img width="1920" height="1080" alt="experiment_2" src="https://github.com/user-attachments/assets/cc8df8cf-8630-460e-b101-49610fe35640" />)
+![experiment_2](Screenshots/experiment_2)
