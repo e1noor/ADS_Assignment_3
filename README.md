@@ -8,7 +8,7 @@ I tested them on random and sorted arrays of sizes 10, 100, and 1000. I measured
 
 Here is my output:
 
-![output](<img width="702" height="173" alt="output" src="https://github.com/user-attachments/assets/eaa17e52-8fd3-46e3-a778-e8cccd2328d2" />)
+![output](output.png)
 
 
 
