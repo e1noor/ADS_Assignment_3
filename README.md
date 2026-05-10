@@ -6,17 +6,17 @@ I implemented BFS and DFS traversal algorithms on a graph stored as an adjacency
 
 Here is my result:
 
-![Result](Result.png)
+![Result](docs/screenshots/Result.png)
 
 What I learned: DFS was slightly faster because it does not use a queue. Both scale linearly with graph size, matching O(V + E) complexity. BFS is better for shortest path, DFS for deep exploration. Main challenge was separating traversal logic from time measurement.
 
 Screenshots:
 
-![Vertex](Vertex.png)
-![Edge](Edge.png)
-![Graph Part 1](Graph_1_part.png)
-![Graph Part 2](Graph_2_part.png)
-![Graph Part 3](Graph_3_part.png)
-![Main](Main.png)
-![Experiment Part 1](Experiment_1_part.png)
-![Experiment Part 2](Experiment_2_part.png)
+![Vertex](docs/screenshots/Vertex.png)
+![Edge](docs/screenshots/Edge.png)
+![Graph Part 1](docs/screenshots/Graph_1_part.png)
+![Graph Part 2](docs/screenshots/Graph_2_part.png)
+![Graph Part 3](docs/screenshots/Graph_3_part.png)
+![Main](docs/screenshots/Main.png)
+![Experiment Part 1](docs/screenshots/Experiment_1_part.png)
+![Experiment Part 2](docs/screenshots/Experiment_2_part.png)
