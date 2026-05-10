@@ -1,46 +1,62 @@
-import java.util.Arrays;
+import java.util.*;
 
 public class Experiment {
-    private Sorter sorter = new Sorter();
-    private Searcher searcher = new Searcher();
 
-    public long measureSortTime(int[] arr, String type) {
-        int[] copy = Arrays.copyOf(arr, arr.length);
-        long start = System.nanoTime();
-        if (type.equals("basic")) sorter.basicSort(copy);
-        else if (type.equals("advanced")) sorter.advancedSort(copy);
-        return System.nanoTime() - start;
+
+    public void runTraversals(Graph g) {
+        long bfsTime = measureBFS(g, 0);
+        long dfsTime = measureDFS(g, 0);
+        System.out.println("BFS time: " + bfsTime + " ns");
+        System.out.println("DFS time: " + dfsTime + " ns");
     }
 
-    public long measureSearchTime(int[] sortedArr, int target) {
-        long start = System.nanoTime();
-        searcher.search(sortedArr, target);
-        return System.nanoTime() - start;
-    }
 
-    public void runAllExperiments() {
-        int[] sizes = {10, 100, 1000};
-        System.out.printf("%-6s %-12s %-14s %-12s %-14s %-8s%n",
-                "Size", "Basic(Rand)", "Advanced(Rand)", "Basic(Sort)", "Advanced(Sort)", "Search");
-        System.out.println("---------------------------------------------------------------");
+    public void runMultipleTests() {
+        int[] sizes = {10, 30, 100};
+        System.out.println("\n=== Performance Comparison (time in nanoseconds) ===");
+        System.out.printf("%-10s %-15s %-15s%n", "Size", "BFS Time", "DFS Time");
 
         for (int size : sizes) {
-            int[] random = Sorter.generateRandomArray(size);
-            int[] sorted = new int[size];
-            for (int i = 0; i < size; i++) sorted[i] = i;
-
-            long basicRand = measureSortTime(random, "basic");
-            long advancedRand = measureSortTime(random, "advanced");
-            long basicSort = measureSortTime(sorted, "basic");
-            long advancedSort = measureSortTime(sorted, "advanced");
-
-            int[] randomSorted = Arrays.copyOf(random, random.length);
-            sorter.advancedSort(randomSorted);
-            int target = randomSorted[size / 2];
-            long searchTime = measureSearchTime(randomSorted, target);
-
-            System.out.printf("%-6d %-12d %-14d %-12d %-14d %-8d%n",
-                    size, basicRand, advancedRand, basicSort, advancedSort, searchTime);
+            Graph g = generateRandomGraph(size, 2);
+            long bfsTime = measureBFS(g, 0);
+            long dfsTime = measureDFS(g, 0);
+            System.out.printf("%-10d %-15d %-15d%n", size, bfsTime, dfsTime);
         }
+    }
+
+
+    private Graph generateRandomGraph(int numVertices, int avgOutDegree) {
+        Graph g = new Graph();
+        for (int i = 0; i < numVertices; i++) {
+            g.addVertex(new Vertex(i));
+        }
+        Random rand = new Random();
+        for (int i = 0; i < numVertices; i++) {
+            int edges = rand.nextInt(avgOutDegree * 2) + 1;
+            for (int j = 0; j < edges; j++) {
+                int to = rand.nextInt(numVertices);
+                if (to != i) {
+                    g.addEdge(i, to);
+                }
+            }
+        }
+        return g;
+    }
+
+    private long measureBFS(Graph g, int start) {
+        long startTime = System.nanoTime();
+        g.bfsOrder(start); // используем "тихую" версию
+        long endTime = System.nanoTime();
+        return endTime - startTime;
+    }
+
+    private long measureDFS(Graph g, int start) {
+        long startTime = System.nanoTime();
+        g.dfsOrder(start);
+        long endTime = System.nanoTime();
+        return endTime - startTime;
+    }
+
+    public void printResults() {
     }
 }
